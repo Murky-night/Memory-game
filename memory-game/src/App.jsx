@@ -32,13 +32,11 @@ function App() {
     isGameComplete,
   } = gameLogic(cardValues);
 
-  console.log("UI is rendering with Move count:", moves);
-
   return (
     <div className="app">
       <GameHeader score={score} moves={moves} onReset={initializeGame} />
 
-      {isGameComplete && <WinMessage moves={moves} />}
+      {isGameComplete && <WinMessage moves={moves}/>}
 
       <div className="cards-grid">
         {cards.map((card) => (
