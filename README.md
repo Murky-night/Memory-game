@@ -2,6 +2,11 @@
 
 A highly interactive card-matching game built with React.js. This project focuses on efficient state management, real-time UI updates, and smooth user interactions to test and improve memory skills.
 
+<img width="1919" height="859" alt="Screenshot 2026-03-02 144419" src="https://github.com/user-attachments/assets/a1c820ef-e05a-4096-830c-a747a0be715d" />
+
+<img width="1919" height="864" alt="Screenshot 2026-03-02 144503" src="https://github.com/user-attachments/assets/ba63bb18-e999-4797-ac3d-282586a8db52" />
+
+
 🚀 Features
 
 Dynamic Matching Logic: Implemented using useEffect to compare pairs and track matched cards.
