@@ -1,4 +1,4 @@
-export const GameHeader = ({score,move}) => {
+export const GameHeader = ({score,moves}) => {
     return (
         <div className="game-header">
         <h1>🎮 Memory card game</h1>
@@ -9,7 +9,7 @@ export const GameHeader = ({score,move}) => {
           </div>
           <div className="stat-item">
             <div className="stat-label">Moves: </div>
-            <div className="stat-value">{move}</div>   
+            <div className="stat-value">{moves}</div>   
           </div>
         </div>
       </div>

@@ -18,8 +18,8 @@ const cardValues = [
   "🍊",
   "🍓",
   "🥝",
-  "🍑",
-  "🍒",
+  "",
+  "",
   ];
 
 function App() {
@@ -31,6 +31,8 @@ function App() {
     initializeGame,
     isGameComplete,
   } = gameLogic(cardValues);
+
+  console.log("UI is rendering with Move count:", moves);
 
   return (
     <div className="app">
