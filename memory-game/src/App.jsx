@@ -18,8 +18,8 @@ const cardValues = [
   "🍊",
   "🍓",
   "🥝",
-  "",
-  "",
+  "🍑",
+  "🍒",
   ];
 
 function App() {
