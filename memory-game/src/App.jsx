@@ -24,6 +24,7 @@ function App() {
   ];
 
   const [cards, setCards] = useState([]);
+  const [flippedCards, setFlippedCards] = useState([]);
 
   const initializeGame = () => {
     // SHUFFLE THE CARDS
@@ -47,7 +48,8 @@ function App() {
     // Don't allow clicking if card is already flipped, matched
     if (
       card.isFlipped ||
-      card.isMatched
+      card.isMatched ||
+      flippedCards.length === 2
     ) {
       return;
     }
@@ -62,7 +64,54 @@ function App() {
     });
 
     setCards(newCards)
+
+    const newFlippedCards = [...flippedCards, card.id];
+    setFlippedCards(newFlippedCards);
+
+    // Check for match if two cards are flipped
+
+    if (flippedCards.length === 1) {
+      setIsLocked(true);
+      const firstCard = cards[flippedCards[0]];
+
+      if (firstCard.value === card.value) {
+        setTimeout(() => {
+          setMatchedCards((prev) => [...prev, firstCard.id, card.id]);
+          setScore((prev) => prev + 1);
+          setCards((prev) =>
+            prev.map((c) => {
+              if (c.id === card.id || c.id === firstCard.id) {
+                return { ...c, isMatched: true };
+              } else {
+                return c;
+              }
+            })
+          );
+
+          setFlippedCards([]);
+          setIsLocked(false);
+        }, 500);
+      } else {
+        // flip back card 1, card 2
+
+        setTimeout(() => {
+          const flippedBackCard = newCards.map((c) => {
+            if (newFlippedCards.includes(c.id) || c.id === card.id) {
+              return { ...c, isFlipped: false };
+            } else {
+              return c;
+            }
+          });
+
+          setCards(flippedBackCard);
+          setIsLocked(false);
+          setFlippedCards([]);
+        }, 1000);
+      }
   };
+}
+  
+    
 
   return (
     <div className="app">
