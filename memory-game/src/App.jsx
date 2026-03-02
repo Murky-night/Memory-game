@@ -4,7 +4,7 @@ function App() {
 
   return (
     <div className="app">
-      <GameHeader />
+      <GameHeader score={3} move={10} />
     </div>
   );
 }
