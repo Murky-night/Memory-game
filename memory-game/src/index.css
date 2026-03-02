@@ -76,6 +76,59 @@ body {
   color: #818cf8;
 }
 
+.reset-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.reset-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.reset-btn:active {
+  transform: translateY(0);
+}
+
+.win-message {
+  background: rgba(15, 23, 42, 0.95);
+  padding: 30px 50px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.win-message h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.win-message p {
+  font-size: 1.2rem;
+  color: #a1a1aa;
+}
+
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -148,4 +201,50 @@ body {
 
 .card:active:not(.matched) {
   transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+  .game-header h1 {
+    font-size: 2rem;
+  }
+
+  .cards-grid {
+    gap: 10px;
+  }
+
+  .card-front,
+  .card-back {
+    font-size: 2.5rem;
+  }
+
+  .card-back {
+    font-size: 3rem;
+  }
+
+  .stats {
+    gap: 20px;
+  }
+
+  .stat-value {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .game-header {
+    padding: 20px;
+  }
+
+  .game-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .card-front,
+  .card-back {
+    font-size: 2rem;
+  }
+
+  .card-back {
+    font-size: 2.5rem;
+  }
 }
